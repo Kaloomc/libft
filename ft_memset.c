@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:39:32 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/13 14:53:28 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/13 14:57:07 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/10/13 15:07:20 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+void	*ft_memset(void *s, int c, unsigned int n)
 {
-	return ((c >= '0' && c <= '9')
-		|| (c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'));
+	while (n > 0)
+	{
+		((unsigned char *)s)[n - 1] = (unsigned char)c;
+		n--;
+	}
+	return (s);
 }
