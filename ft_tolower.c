@@ -6,13 +6,13 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:05:13 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 08:09:45 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/14 09:21:02 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

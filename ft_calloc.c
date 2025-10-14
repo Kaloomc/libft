@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 08:05:13 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 09:21:06 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/14 08:55:43 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/10/14 09:39:25 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdlib.h>
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	size_t			i;
+	unsigned char	*ptr;
+
+	i = 0;
+	ptr = (unsigned char *)malloc(nmemb * size);
+	if (!ptr)
+		return (0);
+	while (i < nmemb * size)
+		ptr[i++] = 0;
+	return (ptr);
 }
