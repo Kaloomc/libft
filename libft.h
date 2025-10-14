@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:17:17 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 11:17:18 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:42:24 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 
 /* String functions */
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *src);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
