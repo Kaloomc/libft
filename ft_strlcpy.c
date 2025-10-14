@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 15:19:59 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 08:06:56 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/14 08:02:14 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/10/14 08:06:41 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	while (n > 0)
+	unsigned int	s;
+	unsigned int	i;
+
+	s = 0;
+	i = 0;
+	while (src[s])
+		s++;
+	if (size == 0)
+		return (s);
+	while (src[i] && i < size - 1)
 	{
-		((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
-		n--;
+		dest[i] = src[i];
+		i++;
 	}
-	return (dest);
+	if (size > 0)
+		dest[i] = '\0';
+	return (s);
 }
