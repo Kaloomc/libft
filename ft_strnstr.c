@@ -6,32 +6,28 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:22:39 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 09:27:39 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:11:46 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *haystack, const char *needle, unsigned int len)
-{
-	unsigned int	i;
-	unsigned int	j;
+#include "libft.h"
 
-	i = 0;
-	j = 0;
-	if (needle[0] == '\0')
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	if (!*needle)
 		return ((char *)haystack);
+	i = 0;
 	while (haystack[i] && i < len)
 	{
-		if (haystack[i] == needle[j])
-		{
-			while (haystack[i + j] == needle[j] && needle[j])
-			{
-				j++;
-			}
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
-			j = 0;
-		}
+		j = 0;
+		while (needle[j] && haystack[i + j] == needle[j] && (i + j) < len)
+			j++;
+		if (!needle[j])
+			return ((char *)&haystack[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

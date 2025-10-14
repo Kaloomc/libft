@@ -6,13 +6,15 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:33:08 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 09:29:22 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:13:22 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (dest == src || n == 0)
 		return (dest);

@@ -6,11 +6,11 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:55:43 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 09:39:25 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:14:34 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	ptr = (unsigned char *)malloc(nmemb * size);
 	if (!ptr)
-		return (0);
+		return (NULL);
 	while (i < nmemb * size)
 		ptr[i++] = 0;
 	return (ptr);

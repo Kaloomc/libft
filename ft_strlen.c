@@ -6,13 +6,15 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 14:50:36 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 09:23:12 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:08:48 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;	
 
 	i = 0;
 	while (str[i])
