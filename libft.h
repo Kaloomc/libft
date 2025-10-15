@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:00:00 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/15 11:30:33 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/15 23:09:06 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 # include <unistd.h>
 
 # define SIZE_MAX 18446744073709551615UL
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
 
 /* Character checks */
 int		ft_isalpha(int c);
@@ -62,7 +69,11 @@ int		ft_tolower(int c);
 /* Allocation */
 void	*ft_calloc(size_t nmemb, size_t size);
 
+/* Pointeur sur fonction */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+/* Liste chainée */
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
