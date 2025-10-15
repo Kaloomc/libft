@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:15:05 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 18:40:26 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/15 08:21:51 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	ft_strlcpy(res, s1 + start, len + 1);
 	return (res);
-}
-
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	if (ac == 3)
-		printf("%s\n", ft_strtrim(av[1], av[2]));
-	return (0);
 }

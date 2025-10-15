@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 11:17:17 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 18:42:24 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/14 08:00:00 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/10/15 11:30:33 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
+
+# define SIZE_MAX 18446744073709551615UL
 
 /* Character checks */
 int		ft_isalpha(int c);
@@ -33,6 +36,12 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	**ft_split(const char *s, char c);
+char	*ft_strtrim(const char *s1, const char *set);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 /* Memory functions */
 void	*ft_memset(void *s, int c, size_t n);
@@ -44,6 +53,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /* Conversion */
 int		ft_atoi(const char *str);
+char	*ft_itoa(int n);
 
 /* Case conversion */
 int		ft_toupper(int c);
@@ -51,5 +61,8 @@ int		ft_tolower(int c);
 
 /* Allocation */
 void	*ft_calloc(size_t nmemb, size_t size);
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif
