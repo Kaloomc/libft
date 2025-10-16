@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:00:00 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/16 14:04:35 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:07:02 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
-# define SIZE_MAX 18446744073709551615ULL
 
 /* ----- STRUCT LISTE CHAINEE ----- */
 typedef struct s_list
