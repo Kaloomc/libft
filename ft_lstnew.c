@@ -6,20 +6,20 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:08:35 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/15 20:12:18 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:03:51 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *newelem;
+	t_list	*newelem;
 
 	newelem = malloc(sizeof(t_list));
 	if (!newelem)
 		return (NULL);
 	newelem->content = content;
 	newelem->next = NULL;
-	return(newelem);
+	return (newelem);
 }
