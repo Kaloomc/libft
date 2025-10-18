@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:20:58 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/15 11:29:45 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:00:44 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 		i++;
 	write(fd, s, i);

@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:45:41 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/15 09:14:38 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:08:46 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,34 +25,6 @@ void	free_split(char **tab, int count)
 	free(tab);
 }
 
-int	ft_wordlen(char const *str, char c)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && str[i] != c)
-		i++;
-	return (i);
-}
-
-char	*ft_worddup(char const *src, char c)
-{
-	int		i;
-	char	*dest;
-
-	i = 0;
-	dest = malloc(sizeof(char) * (ft_wordlen(src, c) + 1));
-	if (!dest)
-		return (NULL);
-	while (src[i] && src[i] != c)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
 int	count_words(char const *str, char c)
 {
 	int	i;
@@ -62,25 +34,42 @@ int	count_words(char const *str, char c)
 	count = 0;
 	while (str[i])
 	{
-		if ((str[i] != c)
-			&& (i == 0 || str[i - 1] == c))
+		if ((str[i] != c) && (i == 0 || str[i - 1] == c))
 			count++;
 		i++;
 	}
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	*ft_worddup(char const *src, char c)
 {
-	char	**res;
-	int		count;
 	int		i;
+	int		len;
+	char	*dest;
+
+	len = 0;
+	while (src[len] && src[len] != c)
+		len++;
+	dest = malloc(sizeof(char) * (len + 1));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (src[i] && src[i] != c)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+static int	fill_split(char **res, char const *s, char c)
+{
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
-	res = malloc(sizeof(char *) * (count_words((char *)s, c) + 1));
-	if (!res)
-		return (NULL);
 	while (s[i])
 	{
 		if ((s[i] != c) && (i == 0 || s[i - 1] == c))
@@ -89,12 +78,26 @@ char	**ft_split(char const *s, char c)
 			if (!res[count])
 			{
 				free_split(res, count);
-				return (NULL);
+				return (0);
 			}
 			count++;
 		}
 		i++;
 	}
 	res[count] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+
+	if (!s)
+		return (NULL);
+	res = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!res)
+		return (NULL);
+	if (!fill_split(res, s, c))
+		return (NULL);
 	return (res);
 }
