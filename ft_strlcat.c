@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:04:11 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/10/14 11:09:37 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:59:25 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	d = 0;
 	s = 0;
+	if (!dest && size == 0)
+		return (ft_strlen(src));
 	while (dest[d] && d < size)
 		d++;
 	while (src[s])
